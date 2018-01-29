@@ -1,6 +1,5 @@
 '''Controls how the board of flippy works'''
 
-from math import ceil
 import random as rd
 import curses
 import numpy as np
@@ -22,7 +21,6 @@ class Board():
         self.position = [rd.randint(0, size[0] - 1), rd.randint(0, size[1] - 1)]
         self.board = np.zeros(size, dtype=bool)
         self.sandbox = sandbox
-        self.show_solution = False
         self.moves = 0
         self.target = 0
 
@@ -41,7 +39,7 @@ class Board():
             opposite -= 2
         return direction
 
-    def move(self, direction, generating=False):
+    def move(self, direction):
         '''Moves marker'''
 
         # Exits if crosses boundary
@@ -68,13 +66,7 @@ class Board():
         elif direction == 3:
             self.position[1] -= 1
 
-        opposite = self.opposite(direction)
-
-        if generating:
-            # self.solution.insert(0, opposite)
-            pass
-        else:
-            self.moves += 1
+        self.moves += 1
 
     def unflipped(self):
         '''Returns number of unflipped blocks'''
@@ -88,11 +80,11 @@ class Board():
     def disp(self):
         '''Displays the board and relevant instructions'''
         self.stdscr.clear()
-        self.output('═══════════════════FLIP.PY═════════════════')
+        self.output('═══════════════════FLIP.PY═══════════════════')
         self.output('\n')
 
         if self.complete() and not self.sandbox:
-            if self.moves <= self.target:
+            if self.moves < self.target:
                 self.output('╔═══════════════════════════════════════════╗')
                 self.output('║               GAME COMPLETE!              ║')
                 self.output('╚═══════════════════════════════════════════╝')
@@ -129,7 +121,6 @@ class Board():
             self.output('Press the arrow keys to move the green marker')
             self.output('The marker flips the spot its leaves')
             self.output('Flip the whole board so it is black')
-            self.output('')
 
         self.output('')
         if self.sandbox:

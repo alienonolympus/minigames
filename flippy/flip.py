@@ -4,8 +4,8 @@ from flippy.board import Board
 
 def main(sandbox=False):
     '''Runs flippy'''
-    width = 20
-    height = 20
+    width = 21
+    height = 21
 
     game = Board((height, width), sandbox)
 
@@ -35,13 +35,16 @@ def main(sandbox=False):
                 return
 
             game.disp()
-        
-        key = game.stdscr.getkey()
 
-        if key == 'r':
-            if sandbox:
-                game.clear()
-            else:
-                game.generate()
-        elif key == 'e':
-            return
+        while True:
+            key = game.stdscr.getkey()
+
+            if key == 'r':
+                if sandbox:
+                    game.clear()
+                    break
+                else:
+                    game.generate()
+                    break
+            elif key == 'e':
+                return
