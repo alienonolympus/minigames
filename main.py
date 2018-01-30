@@ -2,6 +2,7 @@
 
 import curses
 from flippy import flip
+from ttt import ttt
 
 def main():
     '''Shows minigames and allow for selection'''
@@ -14,10 +15,11 @@ def main():
     curses.init_pair(1, curses.COLOR_WHITE, curses.COLOR_BLACK)
     curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_WHITE)
 
-    minigames = ['flippy', 'flippy sandbox']
+    minigames = ['flippy', 'flippy sandbox', 'tictactoe']
     descriptions = [
         'Flip all the white tiles in 500 moves',
-        'Sandbox version of flippy'
+        'Sandbox version of flippy',
+        'Classic 2-Player Tic Tac Toe'
     ]
     games = len(minigames)
     description = True
@@ -57,6 +59,8 @@ def main():
                     flip.main()
                 elif selected == 1:
                     flip.main(True)
+                elif selected == 2:
+                    ttt.main()
             
             if key == 'd':
                 description = not description
