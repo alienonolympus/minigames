@@ -3,6 +3,7 @@
 import curses
 from flippy import flip
 from ttt import ttt
+from hunt import hunt
 
 def main():
     '''Shows minigames and allow for selection'''
@@ -15,11 +16,18 @@ def main():
     curses.init_pair(1, curses.COLOR_WHITE, curses.COLOR_BLACK)
     curses.init_pair(2, curses.COLOR_BLACK, curses.COLOR_WHITE)
 
-    minigames = ['flippy', 'flippy sandbox', 'tictactoe']
+    minigames = [
+        'flippy',
+        'flippy sandbox',
+        'tictactoe',
+        'hunt'
+    ]
+
     descriptions = [
         'Flip all the white tiles in 500 moves',
         'Sandbox version of flippy',
-        'Classic 2-Player Tic Tac Toe'
+        'Classic 2-Player Tic Tac Toe',
+        'Hunt the bear by placing traps'
     ]
     games = len(minigames)
     description = True
@@ -61,6 +69,8 @@ def main():
                     flip.main(True)
                 elif selected == 2:
                     ttt.main()
+                elif selected == 3:
+                    hunt.main()
             
             if key == 'd':
                 description = not description
