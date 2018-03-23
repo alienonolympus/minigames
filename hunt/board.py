@@ -145,6 +145,7 @@ class Board():
     def disp(self):
         '''Display the Hunt board'''
         self.stdscr.clear()
+        self.output('══════════════════════HUNT═══════════════════════\n')
 
         if self.trapped():
             self.output('╔═══════════════════════════════════════════════╗')
