@@ -23,5 +23,7 @@ def main(sandbox=False):
             game.trap()
         elif key == 'c':
             game.clear_trees()
+        elif key == 'r':
+            game.__init__()
         elif key == 'e':
             return

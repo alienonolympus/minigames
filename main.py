@@ -4,6 +4,7 @@ import curses
 from flippy import flip
 from ttt import ttt
 from hunt import hunt
+from conway import conway
 
 def main():
     '''Shows minigames and allow for selection'''
@@ -20,14 +21,16 @@ def main():
         'flippy',
         'flippy sandbox',
         'tictactoe',
-        'hunt'
+        'hunt',
+        'conway'
     ]
 
     descriptions = [
         'Flip all the white tiles in 500 moves',
         'Sandbox version of flippy',
         'Classic 2-Player Tic Tac Toe',
-        'Hunt the bear by placing traps'
+        'Hunt the bear by trapping it while it roams the forest',
+        'Conway\'s Game of Life'
     ]
     games = len(minigames)
     description = True
@@ -51,6 +54,7 @@ def main():
             stdscr.addstr('\nr: Run minigame\n')
             stdscr.addstr('d: Toggle descriptions\n')
             stdscr.addstr('e: Exit menu\n\n\n')
+            stdscr.addstr('Please make sure your terminal is fullscreen!')
 
             key = stdscr.getkey()
 
@@ -71,6 +75,8 @@ def main():
                     ttt.main()
                 elif selected == 3:
                     hunt.main()
+                elif selected == 4:
+                    conway.main()
             
             if key == 'd':
                 description = not description

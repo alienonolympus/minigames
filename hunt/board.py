@@ -80,7 +80,7 @@ class Board():
     
     def move_bear(self):
         '''Move the bear in a random direction'''
-        direction = random.randint(0, 3)
+        direction = random.randint(0, 4)
 
         if self.trapped():
             return
@@ -122,7 +122,7 @@ class Board():
 
     def trap(self):
         '''Place a trap at current position'''
-        if self.traps > 0:
+        if self.traps > 0 and self.board[self.posy][self.posx] != 2:
             self.traps -= 1
             self.board[self.posy][self.posx] = 2
             self.move_bear()
@@ -208,9 +208,14 @@ class Board():
 
             self.output('╚═══════════════════════════════════════════════╝')
             self.output('')
-            self.output('(T)raps Remaining: ' + str(self.traps))
-            self.output('Tree (C)lears Remaining: ' + str(self.can_clear_trees))
+            self.output('Traps Remaining: ' + str(self.traps))
+            self.output('Tree Clears Remaining: ' + str(self.can_clear_trees))
             self.output('Moves Remaining: ' + str(self.moves))
+            self.output('\nInstructions:')
+            self.output('t: Place trap')
+            self.output('c: Clear surrounding trees')
+            self.output('r: Restart')
+            self.output('e: Exit')
 
         self.stdscr.refresh()
             
