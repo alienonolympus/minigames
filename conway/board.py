@@ -62,7 +62,7 @@ class Board():
                     neighbouring.append((posy + i, posx + j))
         
         for pos in neighbouring:
-            if not(pos[0] < 0 or pos[0] > 35 or pos[1] < 0 or pos[1] > 35):
+            if not(pos[0] < 0 or pos[0] > 36 or pos[1] < 0 or pos[1] > 36):
                 count += self.board[pos[0]][pos[1]]
         
         return count
