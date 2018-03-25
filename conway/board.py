@@ -38,10 +38,10 @@ class Board():
             if self.posy > 0:
                 self.posy -= 1
         elif direction == 1:
-            if self.posx < 35:
+            if self.posx < 36:
                 self.posx += 1
         elif direction == 2:
-            if self.posy < 35:
+            if self.posy < 36:
                 self.posy += 1
         elif direction == 3:
             if self.posx > 0:
