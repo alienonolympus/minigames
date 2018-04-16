@@ -4,7 +4,7 @@ from conway.board import Board
 from time import sleep
 
 def main():
-    '''Runs flippy'''
+    '''Runs Conway\'s Game of Life'''
 
     game = Board()
   

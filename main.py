@@ -5,6 +5,7 @@ from flippy import flip
 from ttt import ttt
 from hunt import hunt
 from conway import conway
+from platform import platform
 
 def main():
     '''Shows minigames and allow for selection'''
@@ -22,7 +23,8 @@ def main():
         'flippy sandbox',
         'tictactoe',
         'hunt',
-        'conway'
+        'conway',
+        'platform'
     ]
 
     descriptions = [
@@ -30,7 +32,8 @@ def main():
         'Sandbox version of flippy',
         'Classic 2-Player Tic Tac Toe',
         'Hunt the bear by trapping it while it roams the forest',
-        'Conway\'s Game of Life'
+        'Conway\'s Game of Life',
+        'Jump on top of platforms'
     ]
     games = len(minigames)
     description = True
@@ -77,6 +80,8 @@ def main():
                     hunt.main()
                 elif selected == 4:
                     conway.main()
+                elif selected == 5:
+                    platform.main()
             
             if key == 'd':
                 description = not description

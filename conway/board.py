@@ -31,25 +31,31 @@ class Board():
     def move(self, direction):
         '''Moves marker'''
 
-        if self.hold_down:
-            self.mark()
-
         if direction == 0:
             if self.posy > 0:
+                self.mark_if_pen_down()
                 self.posy -= 1
         elif direction == 1:
             if self.posx < 36:
+                self.mark_if_pen_down()
                 self.posx += 1
         elif direction == 2:
             if self.posy < 36:
+                self.mark_if_pen_down()
                 self.posy += 1
         elif direction == 3:
             if self.posx > 0:
+                self.mark_if_pen_down()
                 self.posx -= 1
     
     def mark(self):
         '''Change the state of current location'''
         self.board[self.posy][self.posx] = not self.board[self.posy][self.posx]
+    
+    def mark_if_pen_down(self):
+        '''Mark if pen is down'''
+        if self.hold_down:
+            self.mark()
 
     def neighbours(self, posy, posx):
         '''Return the amount of 'neighbours' of a particular cell'''
