@@ -1,3 +1,4 @@
+#/usr/bin/python3
 '''Starts a game of flippy'''
 
 from flippy.board import Board

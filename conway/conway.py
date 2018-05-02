@@ -1,3 +1,4 @@
+#/usr/bin/python3
 '''Starts Conway\'s Game of Life'''
 
 from conway.board import Board

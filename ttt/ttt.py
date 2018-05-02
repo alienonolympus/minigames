@@ -1,3 +1,4 @@
+#/usr/bin/python3
 '''Starts a game of Tic Tac Toe'''
 
 from ttt.board import Board

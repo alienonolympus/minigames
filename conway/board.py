@@ -1,3 +1,4 @@
+#/usr/bin/python3
 '''Controls Conway\'s Game of Life'''
 
 import random as rd

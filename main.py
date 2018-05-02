@@ -1,3 +1,4 @@
+#/usr/bin/python3
 '''Selection screen for all the minigames'''
 
 import curses
@@ -24,7 +25,8 @@ def main():
         'tictactoe',
         'hunt',
         'conway',
-        'platform'
+        'platform',
+        'platform sudden death'
     ]
 
     descriptions = [
@@ -33,7 +35,8 @@ def main():
         'Classic 2-Player Tic Tac Toe',
         'Hunt the bear by trapping it while it roams the forest',
         'Conway\'s Game of Life',
-        'Jump on top of platforms'
+        'Jump on a platform and avoid the spikes',
+        'Jump on a platform and avoid the spikes (one life only)'
     ]
     games = len(minigames)
     description = True
@@ -82,6 +85,8 @@ def main():
                     conway.main()
                 elif selected == 5:
                     platform.main()
+                elif selected == 6:
+                    platform.main(1)
             
             if key == 'd':
                 description = not description

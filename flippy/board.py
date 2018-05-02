@@ -1,3 +1,4 @@
+#/usr/bin/python3
 '''Controls how the board of flippy works'''
 
 import random as rd
