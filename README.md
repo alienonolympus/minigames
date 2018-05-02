@@ -8,3 +8,5 @@ Current minigames:
 * Tic Tac Toe
 * Hunt the Bear
 * Conway's Game of Life
+* Platform
+* Platform Sudden Death
