@@ -86,7 +86,7 @@ class Board():
                 self.stdscr.addstr('\n')
             
             self.output('Score: ' + str(self.score))
-            self.output('Score: ' + str(self.lives_remaining))
+            self.output('Lives Remaining: ' + str(self.lives_remaining))
             self.output('\nJump using the up arrow key\nFall using the down arrow key')
         else:
             self.output('╔═══════════════════════════════════════════╗')
