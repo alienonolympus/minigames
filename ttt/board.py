@@ -102,7 +102,7 @@ class Board():
                 self.player = 2
             else:
                 self.player = 1
-
+        
     def complete(self):
         '''Check if the game is complete'''
         win_conditions = [
@@ -145,4 +145,3 @@ class Board():
             return 3
         else:
             return 0
-            

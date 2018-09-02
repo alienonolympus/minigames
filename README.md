@@ -1,6 +1,6 @@
-# Minigames
+# Miniprograms
 
-A collection of minigames in terminal.
+A collection of miniprograms in terminal.
 
 Current minigames:
 * Flippy

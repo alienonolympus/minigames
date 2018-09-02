@@ -1,5 +1,5 @@
 #/usr/bin/python3
-'''Selection screen for all the minigames'''
+'''Selection screen for all the miniprograms'''
 
 import curses
 from flippy import flip
@@ -9,7 +9,7 @@ from conway import conway
 from platform import platform
 
 def main():
-    '''Shows minigames and allow for selection'''
+    '''Shows miniprograms and allow for selection'''
 
     stdscr = curses.initscr()
     curses.noecho()
@@ -46,7 +46,7 @@ def main():
         try:
             stdscr.clear()
 
-            stdscr.addstr('MINIGAMES\n\n')
+            stdscr.addstr('MINIPROGRAMS\n\n')
 
             for i, minigame in enumerate(minigames):
                 if selected == i:
@@ -57,7 +57,7 @@ def main():
                 else:
                     stdscr.addstr(minigame + '\n', curses.color_pair(1))
 
-            stdscr.addstr('\nr: Run minigame\n')
+            stdscr.addstr('\nr: Run miniprogram\n')
             stdscr.addstr('d: Toggle descriptions\n')
             stdscr.addstr('e: Exit menu\n\n\n')
             stdscr.addstr('Please make sure your terminal is fullscreen!')
